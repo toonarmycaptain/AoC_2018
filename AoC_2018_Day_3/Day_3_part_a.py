@@ -3,11 +3,7 @@
 
 Use enumerate and zip to be faster?
 """
-
-
-
 from AoC_2018_Day_3.Day_3_read_input import process_input
-
 
 
 def answer_a(puzzle_input=process_input()):
@@ -27,11 +23,10 @@ def answer_a(puzzle_input=process_input()):
     return overlaps
 
 
-
 def make_coord_dict(puzzle_input):
     coord_dict = {}
 
-    for rectangle  in puzzle_input.values():
+    for rectangle in puzzle_input.values():
 
         start_x_coord = rectangle[0][0]
         start_y_coord = rectangle[0][1]
@@ -44,6 +39,6 @@ def make_coord_dict(puzzle_input):
 
     return coord_dict
 
+
 if __name__ == '__main__':
     print(answer_a())
-

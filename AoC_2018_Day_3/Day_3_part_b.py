@@ -1,9 +1,9 @@
-from AoC_2018_Day_3.Day_3_read_input import process_input
 from AoC_2018_Day_3.Day_3_part_a import make_coord_dict
+from AoC_2018_Day_3.Day_3_read_input import process_input
+
 
 def answer_b(puzzle_input=process_input()):
     coord_dict = make_coord_dict(puzzle_input)
-
 
     no_overlap_coords = {coord for coord in coord_dict if coord_dict[coord] == 1}
 
@@ -13,7 +13,7 @@ def answer_b(puzzle_input=process_input()):
     non_overlapping_rectangles = test_rectangles_for_overlaps(no_overlap_rect_ids, no_overlap_coords, puzzle_input)
 
     if len(non_overlapping_rectangles) == 1:
-        return(non_overlapping_rectangles[0])
+        return non_overlapping_rectangles[0]
     return non_overlapping_rectangles
 
 
@@ -46,9 +46,17 @@ def test_rectangle_for_overlaps(rect_data, no_overlap_coords):
 
 
 if __name__ == '__main__':
-    test_input = ['#1 @ 912,277: 3x3\n', '#2 @ 129,477: 5x5\n', '#3 @ 915,716: 3x3\n',
-                    '#4 @ 809,807: 3x3\n', '#5 @ 130,478: 2x2\n']
-    test_input_q = ['#1 @ 1,3: 4x4\n', '#2 @ 3,1: 4x4\n', '#3 @ 5,5: 2x2\n',]
+    test_input = ['#1 @ 912,277: 3x3\n',
+                  '#2 @ 129,477: 5x5\n',
+                  '#3 @ 915,716: 3x3\n',
+                  '#4 @ 809,807: 3x3\n',
+                  '#5 @ 130,478: 2x2\n',
+                  ]
+
+    test_input_q = ['#1 @ 1,3: 4x4\n',
+                    '#2 @ 3,1: 4x4\n',
+                    '#3 @ 5,5: 2x2\n',
+                    ]
+
     # print(answer_b(process_input(test_input)))
     print(answer_b())
-
